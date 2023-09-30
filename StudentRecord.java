@@ -84,7 +84,7 @@ public class StudentRecord {
                 data = dataReader.getStudentRecords();
 
             }
-            printTopTenStudents();
+            printTopfiveStudents();
             System.out.print("> Select a menu option to continue: ");
             getMenuOption();
         }
@@ -195,14 +195,14 @@ public class StudentRecord {
 
     }
 
-    //F4: Print the top 10 students with the highest
+    //F4: Print the top 5 students with the highest
 
-    public static void printTopTenStudents() {
+    public static void printTopfiveStudents() {
         double total = 0.0;
         String studentName;
         Map<String, Double> map = new HashMap<String, Double>();
-        ArrayList<Double> tenHighestMarks = new ArrayList<Double>();
-        ArrayList<Double> tenLowestMarks = new ArrayList<Double>();
+        ArrayList<Double> fiveHighestMarks = new ArrayList<Double>();
+        ArrayList<Double> fiveLowestMarks = new ArrayList<Double>();
 
         for (Student student : data) {
 
@@ -230,18 +230,18 @@ public class StudentRecord {
         totalMarks.clear();
         totalMarks.addAll(set);
 
-        // get Lowest 10
-        for (int i = 0; i < 10; i++) {
-            tenLowestMarks.add(totalMarks.get(i));
+        // get Lowest 5
+        for (int i = 0; i < 5; i++) {
+            fiveLowestMarks.add(totalMarks.get(i));
         }
-        // get Highest 10
-        for (int i = totalMarks.size() - 1; i >= totalMarks.size() - 10; i--) {
-            tenHighestMarks.add(totalMarks.get(i));
+        // get Highest 5
+        for (int i = totalMarks.size() - 1; i >= totalMarks.size() - 5; i--) {
+            fiveHighestMarks.add(totalMarks.get(i));
         }
 
-        System.out.println("List of students with the top ten highest marks");
+        System.out.println("List of students with the top five highest marks");
         
-        for (Double mark : tenHighestMarks) {
+        for (Double mark : fiveHighestMarks) {
 
             if (map.containsValue(mark)) {
                 for (Map.Entry<String, Double> record : map.entrySet()) {
@@ -257,9 +257,9 @@ public class StudentRecord {
 
         }
 
-        System.out.println("List of students with the top ten lowest marks");
+        System.out.println("List of students with the top five lowest marks");
         
-        for (Double mark : tenLowestMarks) {
+        for (Double mark : fiveLowestMarks) {
 
             if (map.containsValue(mark)) {
                 for (Map.Entry<String, Double> record : map.entrySet()) {
