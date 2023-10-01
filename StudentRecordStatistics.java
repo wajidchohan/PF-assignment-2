@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class StudentRecord {
+public class StudentRecordStatistics {
 
     // private static String unitName;
     private static ArrayList<Student> data = new ArrayList<Student>();
-    private static DataReader dataReader = new DataReader();
+    private static CsvDataReader dataReader = new CsvDataReader();
 
     public static void main(String[] args) {
 
@@ -99,7 +99,6 @@ public class StudentRecord {
 
         double total = 0;
         int i = 1;
-        String unitName;
         String studentName;
         String studentId;
 
@@ -114,7 +113,6 @@ public class StudentRecord {
         System.out.println("List of students with their name, id, assessment marks, and total mark");
         
         for (Student student : data) {
-            unitName = student.getUnit().getUnitName(); // not asked to print out unit name
             studentName = student.getStudentName();
             studentId = student.getStudentId();
 

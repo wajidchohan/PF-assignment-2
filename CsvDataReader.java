@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class DataReader {
+public class CsvDataReader {
     private static String unitName;
     private static ArrayList<Student> studentRecords = new ArrayList<Student>();
 
